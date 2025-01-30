@@ -65,5 +65,6 @@ setTimeout(function() {
             document.getElementsByClassName('Wt5Tfe')[i].style.display = 'none'
         }
     }catch{}
+    L2AGLb.click()
 }, 500);
 
