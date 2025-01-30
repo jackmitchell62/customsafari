@@ -47,19 +47,23 @@ L2AGLb.click()
 
 //Search Query
 
-//Get Rid of Shopping section
-try{
-    document.getElementsByClassName('commercial-unit-mobile-top')[0].style.display = "none"
-}catch{}
+var delayInMilliseconds = 1000; //1 second
 
-//Block Promoted Sites
-try{
-    document.querySelector('[aria-label="Ads"]').style.display = 'none'
-}catch{}
+setTimeout(function() {
+    try{
+        document.getElementsByClassName('commercial-unit-mobile-top')[0].style.display = "none"
+    }catch{}
+    
+    //Block Promoted Sites
+    try{
+        document.querySelector('[aria-label="Ads"]').style.display = 'none'
+    }catch{}
+    
+    //Get rid of 'people also searched for'
+    try{
+        for (let i = 0; i < document.getElementsByClassName('Wt5Tfe').length+1; i++) {
+            document.getElementsByClassName('Wt5Tfe')[i].style.display = 'none'
+        }
+    }catch{}
+}, 500);
 
-//Get rid of 'people also searched for'
-try{
-    for (let i = 0; i < document.getElementsByClassName('Wt5Tfe').length+1; i++) {
-        document.getElementsByClassName('Wt5Tfe')[i].style.display = 'none'
-    }
-}catch{}
